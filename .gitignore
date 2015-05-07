@@ -11,3 +11,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore DS store shit
+.DS_Store
+
+# Ignore database.yml 
+/config/database.yml

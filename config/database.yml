@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: payd_production
+  database: payd
   username: payd
   password: <%= ENV['PAYD_DATABASE_PASSWORD'] %>
