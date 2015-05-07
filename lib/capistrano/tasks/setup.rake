@@ -8,6 +8,14 @@ namespace :setup do
     end
   end
 
+  desc "Upload nginx conf file"
+  task :upload_nginx do 
+    on roles(:app) do
+      execute :sudo, "mkdir -p #{shared_path}/config"
+      upload! StringIO.new(File.read("config/nginx.conf")), "#{shared_path}/config/nginx.conf"
+    end
+  end
+
   desc "Seed the database."
   task :seed_db do
     on roles(:app) do
@@ -23,7 +31,6 @@ namespace :setup do
   task :symlink_config do
     on roles(:app) do
       execute "rm -f /etc/nginx/sites-enabled/default"
-
       execute "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{fetch(:application)}"
       execute "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{fetch(:application)}"
    end

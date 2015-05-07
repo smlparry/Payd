@@ -81,5 +81,6 @@ test:
 production:
   <<: *default
   database: payd
-  username: payd
-  password: <%= ENV['PAYD_DATABASE_PASSWORD'] %>
+  host: localhost
+  username: postgres
+  password: postgres
