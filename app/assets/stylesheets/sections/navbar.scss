@@ -1,0 +1,14 @@
+#navbar {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	@include display(flex);
+	.right {
+		@include flex(1);
+		width: 50%;
+	}
+	.left {
+		@include flex(1);
+		text-align: right;
+		width: 50%;
+	}
+}
