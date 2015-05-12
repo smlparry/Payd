@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'stripe/connect'
+
   get 'dash/home'
   get 'dash/subscribers'
   get 'dash/plans'

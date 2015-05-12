@@ -11,10 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511115819) do
+ActiveRecord::Schema.define(version: 20150512130803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "stripe_users", force: :cascade do |t|
+    t.string   "access_token"
+    t.boolean  "livemode"
+    t.string   "refresh_token"
+    t.integer  "user_id"
+    t.string   "stripe_user_id"
+    t.string   "stripe_publishable_key"
+    t.string   "email"
+    t.string   "url"
+    t.string   "country"
+    t.string   "phone_number"
+    t.string   "business_name"
+    t.string   "business_type"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "dob_day"
+    t.integer  "dob_month"
+    t.integer  "dob_year"
+    t.string   "city"
+    t.string   "street_address"
+    t.string   "state"
+    t.string   "currency"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

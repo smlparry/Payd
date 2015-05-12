@@ -7,7 +7,7 @@
 		width: 50%;
 	}
 	.left {
-		@include flex(1);
+		@include flex(2);
 		text-align: right;
 		width: 50%;
 	}
