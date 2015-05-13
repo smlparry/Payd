@@ -1,0 +1,10 @@
+<% render :layout => 'partials/dashboard' do %>
+	<h1>Connected</h1>
+	<% if @error_type %>
+		<h2>There was an error</h2>
+		<p>Type: <%= @error_type %></p>
+		<p>Description: <%= @error_message %></p>
+	<% else %>
+		<h2>Successfully connected!</h2>
+	<% end %>
+<% end %>

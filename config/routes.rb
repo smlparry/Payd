@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'stripe/connect'
+  get 'dash/stripe/connect' => 'stripe#connect'
+  get 'stripe/connected'
 
   get 'dash/home'
   get 'dash/subscribers'
