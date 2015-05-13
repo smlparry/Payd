@@ -1,14 +1,16 @@
 <%= render :layout => 'partials/dashboard' do %>
 	<h1>Home</h1>
 	<div class="grid">
-		<div class="grid-item">
-			<a href="<%= stripe_connect_path %>">
-				<div class="icon-button">
-					<i class="ion-log-in"></i>
-					<p>Connect Stripe</p>
-				</div>
-			</a>
-		</div>
+		<% if ! @stripe_user %>
+			<div class="grid-item">
+				<a href="<%= stripe_connect_path %>">
+					<div class="icon-button">
+						<i class="ion-log-in"></i>
+						<p>Connect Stripe</p>
+					</div>
+				</a>
+			</div>
+		<% end %>
 		<div class="grid-item">
 			<a href="<%= dash_plans_path %>">
 				<div class="icon-button complete">
