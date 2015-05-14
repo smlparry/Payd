@@ -1,0 +1,213 @@
+/* Mixins */
+/* Partials */
+/* Globals */
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
+/* line 1, /vagrant/payd/app/assets/stylesheets/layouts.scss */
+a {
+  text-decoration: none;
+  color: #f5f5f5;
+}
+/* line 4, /vagrant/payd/app/assets/stylesheets/layouts.scss */
+a:hover {
+  color: #D6D6D6;
+}
+
+/* line 9, /vagrant/payd/app/assets/stylesheets/layouts.scss */
+body {
+  background: #3498db;
+  color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+/* line 16, /vagrant/payd/app/assets/stylesheets/layouts.scss */
+.container {
+  display: block;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+/* line 23, /vagrant/payd/app/assets/stylesheets/layouts.scss */
+.hide {
+  visibility: hidden;
+}
+
+/* Pages */
+/* line 6, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+/* line 10, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .dashboard {
+  width: 100%;
+  min-height: 500px;
+  background: #f5f5f5;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-shadow: 0 0 3px #053F66;
+  color: #383838;
+}
+/* line 19, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .dashboard .sidebar {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 20%;
+  background: #053F66;
+  color: #f5f5f5;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+/* line 25, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .dashboard .sidebar ul {
+  list-style-type: none;
+  font-weight: 400;
+  padding-left: 0px;
+}
+/* line 29, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .dashboard .sidebar ul li {
+  border-bottom: 1px solid #126BA6;
+  padding: 20px;
+}
+/* line 32, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .dashboard .sidebar ul li:hover {
+  background: #0A4D7A;
+}
+/* line 36, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .dashboard .sidebar ul li.active {
+  box-shadow: inset 0 0 4px #0A4D7A;
+  background: #126BA6;
+}
+/* line 42, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .dashboard .content {
+  -webkit-box-flex: 2;
+  -moz-box-flex: 2;
+  box-flex: 2;
+  -webkit-flex: 2;
+  -moz-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  width: 80%;
+  padding: 5px 15px;
+}
+/* line 46, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .dashboard .content h1 {
+  color: #2C8AC9;
+  padding-left: 15px;
+}
+/* line 52, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .grid {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+/* line 54, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .grid .grid-item {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 50%;
+  margin: 5px;
+}
+/* line 58, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .grid .grid-item .icon-button {
+  border-radius: 5px;
+  text-align: center;
+  color: #f5f5f5;
+  background: #3498db;
+  box-shadow: 0 0 2px #2C8AC9;
+  margin: auto;
+  padding: 25px 0px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 67, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .grid .grid-item .icon-button i {
+  font-size: 4em;
+}
+/* line 70, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .grid .grid-item .icon-button:hover {
+  background: #2C8AC9;
+}
+/* line 74, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .grid .grid-item .complete {
+  background: #6CBD7D;
+  box-shadow: 0 0 2px #59AB6A;
+}
+/* line 77, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+#dash .grid .grid-item .complete:hover {
+  background: #59AB6A;
+}
+
+/* line 86, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+.flash_notice p {
+  padding: 20px;
+  background: #6CBD7D;
+  border-radius: 5px;
+}
+/* line 90, /vagrant/payd/app/assets/stylesheets/sections/dash.scss */
+.flash_notice p .pull-right {
+  float: right;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* line 1, /vagrant/payd/app/assets/stylesheets/sections/navbar.scss */
+#navbar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+/* line 5, /vagrant/payd/app/assets/stylesheets/sections/navbar.scss */
+#navbar .right {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 50%;
+}
+/* line 9, /vagrant/payd/app/assets/stylesheets/sections/navbar.scss */
+#navbar .left {
+  -webkit-box-flex: 2;
+  -moz-box-flex: 2;
+  box-flex: 2;
+  -webkit-flex: 2;
+  -moz-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  text-align: right;
+  width: 50%;
+}
