@@ -1,0 +1,6 @@
+<%= render :layout => 'partials/dashboard' do %>
+	<h1>Account</h1>
+	<% if @stripe_user %>
+		<h2>Stripe account has been connected</h2>
+	<% end %>
+<% end %>

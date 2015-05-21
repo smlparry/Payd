@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'dash/subscribers'
   get 'dash/plans'
   get 'dash/transactions'
+  get 'dash/account'
 
   devise_for :users
   # Home route

@@ -37,9 +37,11 @@ gem 'devise'
 
 # bourbon
 gem 'bourbon'
-
+# httparty
+gem 'httparty'
 
 group :development, :test do
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -54,4 +56,3 @@ group :development, :test do
   gem 'capistrano-bundler', '~> 1.1.2'
   gem 'capistrano-rbenv', '~> 2.0.2'
 end
-
