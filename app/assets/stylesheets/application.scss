@@ -3,16 +3,17 @@
 /* Mixins */
 
 /* Globals */
-@import "globals/typography";
 @import "globals/variables";
+@import "globals/typography";
 @import "globals/effects";
 @import "globals/flash";
 @import "layouts";
 
 /* Partials */
 @import "partials/grid";
+@import "partials/form";
 
-/* Pages */
+/* Pages/sections */
 @import "sections/dash";
 @import "sections/pages";
 @import "sections/navbar"

@@ -19,4 +19,10 @@ module DashHelper
       end
     end
   end
+
+  def form_field(content, class_name = '')
+    content_tag(:div, class: [ 'form-field', class_name ]) do
+      content.html_safe
+    end
+  end
 end

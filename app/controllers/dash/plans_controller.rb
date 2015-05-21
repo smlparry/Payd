@@ -5,6 +5,7 @@ module Dash
     end
 
     def new
+      @plan = Plan.new
     end
 
     def create

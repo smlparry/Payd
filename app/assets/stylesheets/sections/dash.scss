@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #dash {
-	h1 {
-		font-family: 'Montserrat', sans-serif;
-		font-weight: 500;
-	}
+  .dash-header {
+    h1 {
+      color: $white;
+    }
+  }
 	.dashboard {
 		width: 100%;
 		min-height: 500px;
@@ -46,9 +47,6 @@
 			@include flex(2);
 			width: 80%;
 			padding: 5px 25px;
-			h1 {
-				color: $blueShadow;
-			}
 		}
 	}
 }
