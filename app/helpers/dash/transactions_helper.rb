@@ -1,0 +1,2 @@
+module Dash::TransactionsHelper
+end

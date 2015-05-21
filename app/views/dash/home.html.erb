@@ -1,23 +1,9 @@
 <%= render :layout => 'partials/dashboard' do %>
-	<h1>Home</h1>
-	<div class="grid">
-		<% if ! @stripe_user %>
-			<div class="grid-item">
-				<a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=<%= STRIPE_CONFIG['client_id'] %>&scope=read_write">
-					<div class="icon-button">
-						<i class="ion-log-in"></i>
-						<p>Connect Stripe</p>
-					</div>
-				</a>
-			</div>
-		<% end %>
-		<div class="grid-item">
-			<a href="<%= dash_plans_path %>">
-				<div class="icon-button complete">
-					<i class="ion-android-add"></i>
-					<p>Add a plan</p>
-				</div>
-			</a>
-		</div>
-	</div>
+  <h1>Home</h1>
+  <div class="grid">
+    <% if ! current_user.stripe_user %>
+      <%= grid_item 'Connect Stripe', 'https://connect.stripe.com/oauth/authorize?response_type=code&client_id=' + STRIPE_CONFIG["client_id"] + '&scope=read_write', 'ion-log-in' %>
+    <% end %>
+    <%= grid_item 'Add a Plan', new_dash_plan_path, 'ion-android-add', 'complete' %>
+  </div>
 <% end %>

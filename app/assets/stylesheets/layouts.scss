@@ -1,14 +1,14 @@
 a {
 	text-decoration: none;
-	color: $white;
+	color: $blue;
 	&:hover {
-		color: $hoverWhite;
+		color: $blueShadow;
 	}
 }
 
 body {
-	background: #3498db;
-	color: #f5f5f5;
+	background: $blue;
+	color: $white;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 }

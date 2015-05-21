@@ -1,7 +1,5 @@
-require 'httparty'
-
 class StripeController < ApplicationController
-  include HTTParty
+
 
   def connect
   end
@@ -27,8 +25,7 @@ class StripeController < ApplicationController
         # Success so redirect
         redirect_to dash_home_path
       else
-        @error_type = response["error"]
-        @error_message = response["error_description"]
+        redirect_to dash_account_stripe_index_path, :flash => { alert: params[:error_description] }
       end
 
     else

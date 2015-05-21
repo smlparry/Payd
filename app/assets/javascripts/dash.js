@@ -1,6 +1,6 @@
 $(document).ready(function() {
   'use strict';
-  $('.flash_notice').on('click', '.dismiss-notice', function(event) {
+  $('.flash').on('click', '.dismiss-flash', function(event) {
     $(event.target.parentElement.parentElement.parentElement).remove();
   });
 });

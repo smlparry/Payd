@@ -1,0 +1,17 @@
+<%= render :layout => 'partials/dashboard' do %>
+  <div class="grid">
+    <% if ! current_user.stripe_user %>
+      <div class="grid-item">
+        <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=<%= STRIPE_CONFIG['client_id'] %>&scope=read_write">
+          <div class="icon-button">
+            <i class="ion-log-in"></i>
+            <p>Connect Stripe</p>
+          </div>
+        </a>
+      </div>
+    <% end %>
+  </div>
+  <ul>
+    <li><%= link_to "ad", new_dash_account_stripe_path %></li>
+  </ul>
+<% end %>

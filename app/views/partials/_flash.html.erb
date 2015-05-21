@@ -1,11 +1,10 @@
-<% if notice %>
-	<div class="flash_notice">
-		<p class="notice"><%= notice %> <span class="pull-right"><i class="ion-close-circled dismiss-notice"></i></span></p>
-	</div>
+<% if flash[:notice] %>
+  <div class="flash">
+    <p class="notice"><%= flash[:notice] %> <span class="pull-right"><i class="ion-close-circled dismiss-flash"></i></span></p>
+  </div>
 <% end %>
-
-<% if alert %>
-	<div class="flash_alert">
-		<p class="notice"><%= alert %><span class="pull-right"><i class="ion-close-circled dismiss-notice"></i></span></p>
-	</div>
+<% if flash[:error] %>
+  <div class="flash">
+    <p class="error"><%= flash[:error] %><span class="pull-right"><i class="ion-close-circled dismiss-flash"></i></span></p>
+  </div>
 <% end %>

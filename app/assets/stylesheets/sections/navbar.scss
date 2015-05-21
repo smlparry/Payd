@@ -11,4 +11,10 @@
 		text-align: right;
 		width: 50%;
 	}
+	a {
+		color: $white;
+    &:hover {
+      color: $hoverWhite;
+    }
+	}
 }

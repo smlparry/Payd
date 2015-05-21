@@ -2,13 +2,15 @@
 
 /* Mixins */
 
-/* Partials */
-
 /* Globals */
 @import "globals/typography";
 @import "globals/variables";
 @import "globals/effects";
+@import "globals/flash";
 @import "layouts";
+
+/* Partials */
+@import "partials/grid";
 
 /* Pages */
 @import "sections/dash";

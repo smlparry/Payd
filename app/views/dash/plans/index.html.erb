@@ -1,0 +1,9 @@
+<%= render :layout => "partials/dashboard" do %>
+  <h1>Plans</h1>
+  <% if @plans.length == 0 %>
+    <p>You do not have any plans yet</p>
+    <div class="grid">
+      <%= grid_item 'Add Plan', new_dash_plan_path, 'ion-android-add'  %>
+    </div>
+  <% end %>
+<% end %>
