@@ -1,2 +1,23 @@
 <%= render :layout => "partials/dashboard" do %>
+  <h1><%= @plan.name %></h1>
+  <table>
+    <tbody>
+      <tr>
+        <td>Name:</td>
+        <td><%= @plan.name %></td>
+      </tr>
+      <tr>
+        <td>Amount:</td>
+        <td><%= @plan.amount %></td>
+      </tr>
+      <tr>
+        <td>Subscription period:</td>
+        <td>Every <%= @plan.period_amount %> <%= @plan.period_type %>s</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="actions">
+    <%= link_to '<i class="ion-edit"></i> Edit this plan'.html_safe, edit_dash_plan_path(@plan.id), class: "button" %>
+    <%= link_to '<i class="ion-trash-b"></i> Delete this plan'.html_safe, dash_plan_path(@plan.id), method: :delete, class: "button danger" %>
+  </div>
 <% end %>

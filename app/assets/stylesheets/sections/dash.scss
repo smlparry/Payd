@@ -7,6 +7,12 @@
     h1 {
       color: $white;
     }
+    a {
+    	color: $white;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 	.dashboard {
 		width: 100%;
@@ -46,7 +52,10 @@
 		.content {
 			@include flex(2);
 			width: 80%;
-			padding: 5px 25px;
+			padding: 5px 25px 25px;
 		}
+	}
+	.actions {
+		margin: 20px 0;
 	}
 }

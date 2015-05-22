@@ -1,0 +1,112 @@
+.dataTables_wrapper {
+  .dataTables_length {
+    @include dataTableElement();
+    select {
+      width: 25%;
+      padding: 10px;
+      margin: 0px 7px;
+    }
+  }
+  .dataTables_filter {
+    @include dataTableElement();
+    text-align:right;
+    input {
+      display: inline-block;
+      width: 70%;
+      padding: 10px;
+    }
+  }
+  .dataTables_info {
+    @include dataTableElement();
+    padding: 20px 0;
+  }
+  .dataTables_paginate {
+    @include dataTableElement();    
+    padding: 25px 0;
+    text-align: right;
+    .paginate_button {
+      cursor: pointer;
+      border: 1px solid $grey;
+      border-radius: 5px;
+      padding: 5px;
+      &.current {
+        border: 1px solid $blue;
+      }
+      &:hover {
+        color:white;
+        background: $blue;
+      }
+    }
+    .next, .previous {
+      border: none;
+      &:hover {
+        cursor: pointer;
+        background: none;
+        color: $text;
+      }
+    }
+    .disabled {
+      color: $text;
+      &:hover {
+        cursor:default;
+      }
+    }
+  }
+}
+table {
+  width: 100%;
+  background: white;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+  border: 1px solid $grey;
+  font-size: 1em;
+  border-radius: 5px;
+  border-spacing: 0;
+  thead {
+    width: 100%;
+    font-weight: 400;
+    tr {
+      cursor: pointer;
+      td {
+        border-bottom: 1px solid $grey;
+        border-right: 1px solid $grey;
+        color: $lightText;
+        &:last-child {
+          border-right: none;
+        }
+        &.sorting_asc, &.sorting_desc {
+          color: $text;
+          font-weight: 500;
+        }
+        &.sorting:after, &.sorting_asc:after {
+          font-family: "Ionicons";
+          content: "\f123";
+          float: right;
+        }
+        &.sorting:after, &.sorting_desc:after {
+          font-family: "Ionicons";
+          content: "\f126";
+          float:right;
+        }
+      }
+  
+    }
+  }
+  tbody {
+    tr {
+      td {
+      }
+      &:last-child {
+        @include border-bottom-radius(5px);
+      }
+      &:nth-child(even) {
+          background: #F7F7F7;
+      }
+    }
+  }
+  td {
+    padding: 16px;
+  }
+  .dataTables_info {
+
+  }
+}

@@ -1,13 +1,15 @@
 // Colors
+$text: #2b3e51;
+$lightText: lighten($text, 32%);
 $blue: #3498db;
-$blueShadow: darken($blue, 12%);
+$blueShadow: darken($blue, 5%);
 $darkBlue: darken($blue, 33%);
 $white: #f5f5f5;
-$text: #2b3e51;
 $hoverWhite: darken($white, 15%);
 $whiteShadow: darken($white, 25%);
 $sidebarActive: darken($blue, 15%);
 $sidebarHover: lighten($darkBlue, 8%);
 $lightGreen: #6CBD7D;
-$lightGreenShadow: darken($lightGreen, 12%);
+$lightGreenShadow: darken($lightGreen, 5%);
 $lightRed: #E8624F;
+$grey: #cfd9db;

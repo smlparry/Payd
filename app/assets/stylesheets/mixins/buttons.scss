@@ -1,0 +1,25 @@
+@mixin button() {
+  box-sizing:border-box;
+  display: inline-block;
+  text-align:center;
+  padding: 16px;
+  background: $lightGreen;
+  border: 1px solid darken($lightGreen, 20%);
+  border-radius: 5px;
+  font-size: 1em;
+  color: $white;
+  cursor: pointer;
+  &:hover {
+    background: $lightGreenShadow;
+    color: $white;
+  }
+  i {
+    padding: 0 8px 0 0;
+  }
+}
+
+@mixin button-block() {
+  @include button();
+  display: block;
+  width: 100%;
+}

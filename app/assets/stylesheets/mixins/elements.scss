@@ -1,0 +1,6 @@
+@mixin input-image( $image ) {
+  padding-left: 54px;
+  background: white url(/assets/icons/#{$image}) no-repeat left;
+  background-position: 17px;
+  background-size: 24px;
+}

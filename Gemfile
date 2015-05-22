@@ -39,6 +39,8 @@ gem 'devise'
 gem 'bourbon'
 # httparty
 gem 'httparty'
+# datatables
+gem 'jquery-datatables-rails', '~> 3.3.0'
 
 group :development, :test do
 

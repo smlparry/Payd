@@ -25,4 +25,35 @@ module DashHelper
       content.html_safe
     end
   end
+
+  def breadcrumbs
+    url = request.original_fullpath
+    crumbs = url.reverse.chomp('/').reverse.split('/')
+    breadcrumbs = ""
+    crumb_path = "/"
+    crumbs.each do |crumb|
+      crumb_path = crumb_path + crumb + '/'
+      if crumb != crumbs[ crumbs.length - 1 ]
+        breadcrumbs << '<a href="' + crumb_path + '">' + crumb.first.upcase + crumb[1..-1] + '</a><i class="ion-chevron-right breadcrumb"></i>'
+      else
+        breadcrumbs << crumb.first.upcase + crumb[1..-1]
+      end
+    end
+    breadcrumbs.html_safe
+  end
+
+  def table_for(model)
+    content_tag(:table) do
+      content_tag(:tbody) do
+        content_tag(:tr) do
+          model.each do |m|
+            content_tag(:td) do
+              # m.send( show[0] )
+              "hey"
+            end
+          end
+        end
+      end
+    end
+  end
 end

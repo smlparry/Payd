@@ -5,5 +5,25 @@
     <div class="grid">
       <%= grid_item 'Add Plan', new_dash_plan_path, 'ion-android-add'  %>
     </div>
+  <% else %>
+    <table id="plans" class="datatable">
+      <thead>
+        <tr>
+          <td>#</td>
+          <td>Name</td>
+          <td>Amount</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @plans.each do |plan| %>
+          <tr>
+            <td><%= link_to plan.id, dash_plan_path(plan.id) %></td>
+            <td><%= link_to plan.name, dash_plan_path(plan.id) %></td>
+            <td><%= link_to plan.amount, dash_plan_path(plan.id) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to "Add Another Plan", new_dash_plan_path, class: "button-block" %>
   <% end %>
 <% end %>

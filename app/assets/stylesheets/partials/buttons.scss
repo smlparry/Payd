@@ -1,0 +1,15 @@
+.button {
+  @include button();
+}
+
+.button-block {
+  @include button-block();
+}
+
+.danger {
+  background: $lightRed;
+  border: 1px solid darken($lightRed, 20%);
+  &:hover{
+    background: darken($lightRed, 8%);
+  }
+}
