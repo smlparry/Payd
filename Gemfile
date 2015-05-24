@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
@@ -41,6 +40,8 @@ gem 'bourbon'
 gem 'httparty'
 # datatables
 gem 'jquery-datatables-rails', '~> 3.3.0'
+# stripe
+gem 'stripe', git: 'https://github.com/stripe/stripe-ruby'
 
 group :development, :test do
   gem 'fabrication'

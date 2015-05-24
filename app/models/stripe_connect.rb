@@ -10,4 +10,10 @@ class StripeConnect
                     grant_type: 'authorization_code'
     }) || code
   end
+
+  def self.get_user_details(user_id)
+    Stripe.api_key = STRIPE_CONFIG['secret_key']
+    account = Stripe::Account.retrieve(user_id)
+    p account
+  end
 end

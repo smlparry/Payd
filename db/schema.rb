@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150523073716) do
+ActiveRecord::Schema.define(version: 20150524153246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,22 +34,18 @@ ActiveRecord::Schema.define(version: 20150523073716) do
     t.string   "stripe_user_id"
     t.string   "stripe_publishable_key"
     t.string   "email"
-    t.string   "url"
+    t.string   "business_url"
     t.string   "country"
     t.string   "phone_number"
     t.string   "business_name"
-    t.string   "business_type"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.integer  "dob_day"
-    t.integer  "dob_month"
-    t.integer  "dob_year"
-    t.string   "city"
-    t.string   "street_address"
-    t.string   "state"
-    t.string   "currency"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "business_logo"
+    t.string   "name"
+    t.string   "default_currency"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.text     "currencies_supported",   default: [],              array: true
+    t.text     "timezone"
+    t.boolean  "charge_enabled"
   end
 
   create_table "subscribers", force: :cascade do |t|
