@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_one :stripe_user
   has_many :plans
+  has_many :transactions
 end

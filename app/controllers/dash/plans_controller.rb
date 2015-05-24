@@ -1,6 +1,6 @@
 module Dash
   class PlansController < ApplicationController
-    before_action :plan_id, :is_users_plan, only: [:show, :edit]
+    before_action :get_plan, :is_users_plan, only: [:show, :edit]
     def index
       @plans = current_user.plans
     end
@@ -40,7 +40,7 @@ module Dash
     end
 
     private
-    def plan_id
+    def get_plan
       begin
         @plan = Plan.find(params[:id])
       rescue

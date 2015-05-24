@@ -26,8 +26,8 @@
     text-align: right;
     .paginate_button {
       cursor: pointer;
-      border: 1px solid $grey;
       border-radius: 5px;
+      margin: 0 2px;
       padding: 5px;
       &.current {
         border: 1px solid $blue;
@@ -93,20 +93,19 @@ table {
   }
   tbody {
     tr {
-      td {
-      }
+       
       &:last-child {
         @include border-bottom-radius(5px);
       }
       &:nth-child(even) {
-          background: #F7F7F7;
+        background: $lightGrey;
+      }
+      &:hover {
+        background: darken($lightGrey, 5%);
       }
     }
   }
   td {
     padding: 16px;
-  }
-  .dataTables_info {
-
   }
 }

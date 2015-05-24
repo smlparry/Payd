@@ -12,6 +12,10 @@ input {
     outline-width: 0;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
   }
+  &[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+  }
 }
 select {
   box-sizing:border-box;

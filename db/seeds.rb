@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+20.times do
+  Plan.create(name: Faker::Lorem.word,
+              amount: Faker::Number.number(2),
+              period_type: 'month',
+              period_amount: Faker::Number.digit
+              )
+end
