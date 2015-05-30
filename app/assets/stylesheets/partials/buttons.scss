@@ -6,9 +6,24 @@
   @include button-block();
 }
 
+.button-small {
+  @include button();
+  padding: 7px 16px;
+}
+
+.button-hollow {
+  @include button();
+  background: none;
+  border: 1px solid $lightGreen;
+  color: $lightGreen;
+  &:hover {
+    background: lighten($lightGreen, 6%);
+  }
+}
+
 .danger {
   background: $lightRed;
-  border: 1px solid darken($lightRed, 20%);
+  border-color: darken($lightRed, 20%);
   &:hover{
     background: darken($lightRed, 8%);
   }

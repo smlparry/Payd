@@ -59,3 +59,35 @@
 		margin: 20px 0;
 	}
 }
+
+// Plan styling
+.flex {
+  .form-field {
+  	#trial_period_button {
+      width: 100%;
+  	}
+    #plan_trial_period_days {
+      width: 85%;
+      display: inline-block;
+    }
+    #remove_trial {
+      padding-left: 10px;
+      font-size: 1.3em;
+    }
+  }
+}
+
+.outline {
+  padding: 16px;
+  border-radius: 5px;
+  border: 1px solid $lightGreen;
+  text-align:center;
+}
+
+.outline-danger {
+  border: 1px solid $lightRed;
+  color: $lightRed;
+}
+.block {
+  display:block
+}

@@ -3,11 +3,17 @@
     <h1>Add Plan</h1>
     <%= form_for @plan, url: { action: "create" } do |f| %>
       <%= form_field f.text_field :name, placeholder: "Plan Name", class: "prompt" %>
-      <%= form_field f.number_field :amount, placeholder: "Amount", class: "money" %>
+      <%= form_field f.text_field :amount, required: true, placeholder: "Amount", class: "money" %>
       <h3>Charge Every:</h3>
       <div class="flex">
-        <%= form_field (f.number_field :period_amount, class: "right-aligned margin-right"), 'margin-right' %>
-        <%= form_field f.select :period_type, options_for_select([['Months', 'month'], ['Weeks', 'week'], ['Days', 'day']]) %>
+        <%= form_field (f.number_field :interval_count, required: true, value: 1, class: "right-aligned margin-right"), 'margin-right' %>
+        <%= form_field f.select :interval_type, options_for_select([['Months', 'month'], ['Weeks', 'week'], ['Days', 'day']]) %>
+      </div>
+      <div id="trial_box" class="flex">
+        <div class="form-field margin-right">
+          <button id="trial_period_button" class="button-hollow trial margin-right">Add a Trial Period</button>
+        </div>
+        <%= form_field f.select :currency, options_for_select(@stripe_user.currencies_supported, @stripe_user.default_currency) %>
       </div>
       <div class="submit">
         <%= submit_tag "Add Plan", class: 'submit-button' %>

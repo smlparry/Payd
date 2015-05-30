@@ -1,11 +1,14 @@
 .flash {
-  p {
+  p, div {
     padding: 20px;
     border-radius: 5px;
     .pull-right {
       float: right;
       font-family: 'Montserrat', sans-serif;
     }
+  }
+  ul {
+    margin:none;
   }
 }
 

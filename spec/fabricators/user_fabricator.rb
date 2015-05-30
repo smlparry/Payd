@@ -1,7 +1,5 @@
 Fabricator(:user) do
-  plans(count: 2)
   email { Faker::Internet.email }
-  encrypted_password { Faker::Internet.password }
-  sign_in_count { Faker::Number.digit }
-  amount { Faker::Number.number(2) }
+  password { 'secret123' }
+  password_confirmation { 'secret123' }
 end

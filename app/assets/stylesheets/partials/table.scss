@@ -21,7 +21,7 @@
     padding: 20px 0;
   }
   .dataTables_paginate {
-    @include dataTableElement();    
+    @include dataTableElement();
     padding: 25px 0;
     text-align: right;
     .paginate_button {
@@ -70,6 +70,7 @@ table {
         border-bottom: 1px solid $grey;
         border-right: 1px solid $grey;
         color: $lightText;
+        padding: 16px;
         &:last-child {
           border-right: none;
         }
@@ -88,12 +89,14 @@ table {
           float:right;
         }
       }
-  
+
     }
   }
   tbody {
     tr {
-       
+      td{
+        padding: 7px 16px;
+      }
       &:last-child {
         @include border-bottom-radius(5px);
       }
@@ -104,8 +107,5 @@ table {
         background: darken($lightGrey, 5%);
       }
     }
-  }
-  td {
-    padding: 16px;
   }
 }

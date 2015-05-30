@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root to: 'pages#home'
 
   namespace :dash do
@@ -8,7 +7,9 @@ Rails.application.routes.draw do
     resources 'plans', 'subscribers', 'transactions'
     namespace :account do
       get '/' => 'account#index'
-      resources 'stripe'
+      get '/stripe/connect' => 'stripe#new'
+      get '/stripe/disconnect'
+      resources :stripe
     end
   end
 
@@ -16,5 +17,4 @@ Rails.application.routes.draw do
 
   get 'pages/home'
   get 'pages/dash'
-
 end

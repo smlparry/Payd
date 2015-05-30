@@ -9,12 +9,10 @@
   font-size: 1em;
   color: $white;
   cursor: pointer;
+  @include transition(background 0.1s ease-in-out);
   &:hover {
     background: $lightGreenShadow;
     color: $white;
-  }
-  i {
-    padding: 0 8px 0 0;
   }
 }
 

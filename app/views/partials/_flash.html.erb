@@ -8,3 +8,24 @@
     <p class="error"><%= flash[:error] %><span class="pull-right"><i class="ion-close-circled dismiss-flash"></i></span></p>
   </div>
 <% end %>
+
+<% if flash[:invalid] %>
+  <div class="flash">
+    <div class="error">
+    <span class="pull-right"><i class="ion-close-circled dismiss-flash"></i></span>
+      <ul>
+        <% flash[:invalid].each do |subject, requirement| %>
+        <li>
+          <%= subject.capitalize %>
+          <% requirement.each.with_index do |requirement, index| %>
+            <% if index > 0 %>
+              and
+            <% end %>
+            <%= requirement %>
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

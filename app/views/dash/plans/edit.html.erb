@@ -3,11 +3,17 @@
     <h1>Edit: <%= @plan.name %></h1>
     <%= form_for @plan, url: { action: "update" } do |f| %>
       <%= form_field f.text_field :name, placeholder: "Plan Name", class: "prompt" %>
-      <%= form_field f.number_field :amount, placeholder: "Amount", class: "money" %>
+      <%= form_field '<input disabled="disabled" placeholder="Amount" class="money" type="text" value="' + to_money(@plan.amount) + '" name="plan[amount]" id="plan_amount">' %>
       <h3>Charge Every:</h3>
       <div class="flex">
-        <%= form_field (f.number_field :period_amount, class: "right-aligned margin-right"), 'margin-right' %>
-        <%= form_field f.select :period_type, options_for_select([['Months', 'month'], ['Weeks', 'week'], ['Days', 'day']]) %>
+        <%= form_field (f.number_field :interval_count, disabled: true, value: 1, class: "right-aligned margin-right"), 'margin-right' %>
+        <%= form_field f.text_field :interval_type, disabled: true  %>
+      </div>
+      <div id="trial_box" class="flex">
+        <div class="form-field margin-right">
+          <div class="outline outline-danger block">No Trial Period</div>
+        </div>
+        <%= form_field (f.text_field :currency, disabled: true).upcase %>
       </div>
       <div class="submit">
         <%= submit_tag "Update Plan", class: 'submit-button' %>

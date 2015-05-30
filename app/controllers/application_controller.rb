@@ -18,4 +18,8 @@ class ApplicationController < ActionController::Base
   def redirect_with_error(path, message)
     redirect_with_message(path, 'error', message)
   end
+
+  def redirect_with_invalid(path, message)
+    redirect_with_message(path, 'invalid', message)
+  end
 end

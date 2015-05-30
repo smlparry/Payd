@@ -9,6 +9,11 @@ $(document).on('ready page:change', function() {
     language: {
         search: '_INPUT_',
         searchPlaceholder: 'Search Table'
-    }
+    },
+    'order': [[ 0, 'desc' ]]
+  });
+
+  $('form').on('submit', function() {
+    $('#modal-overlay').removeClass('hide');
   });
 });

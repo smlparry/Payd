@@ -7,7 +7,6 @@ input {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
   border: 1px solid $grey;
   font-size: 1em;
-  margin: 7px 0;
   &:focus {
     outline-width: 0;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
@@ -15,6 +14,9 @@ input {
   &[type="checkbox"] {
     display: inline-block;
     width: auto;
+  }
+  &:disabled {
+    background-color: $lightGrey !important;
   }
 }
 select {
@@ -30,7 +32,6 @@ select {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
   border: 1px solid $grey;
   font-size: 1em;
-  margin: 7px 0;
   background: url("/assets/icons/down-arrow.png") no-repeat;
   background-position: right 17px center;
   background-size: 24px;

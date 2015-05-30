@@ -5,7 +5,18 @@ class StripeUser < ActiveRecord::Base
   belongs_to :user
 
   # Makes a new stripe user with oAuth response
-  def make_from_request(response, user_id)
+  def create_from_response(response, user_id)
+    save_from_response(response, user_id)
+    stripe_account = stripe_user_account_details
+    save_user_account_details(stripe_account) if stripe_account
+  end
+
+  def stripe_user_account_details
+    Stripe.api_key = STRIPE_CONFIG['secret_key']
+    Stripe::Account.retrieve(stripe_user_id)
+  end
+
+  def save_from_response(response, user_id)
     self.user_id = user_id
     self.stripe_publishable_key = response['stripe_publishable_key']
     self.stripe_user_id = response['stripe_user_id']
@@ -13,17 +24,9 @@ class StripeUser < ActiveRecord::Base
     self.refresh_token = response['refresh_token']
     self.access_token = response['access_token']
     save
-    get_user_account_details(user_id)
   end
 
-  def get_user_account_details(user_id)
-    Stripe.api_key = STRIPE_CONFIG['secret_key']
-    stripe_acc = Stripe::Account.retrieve(stripe_user_id)
-    save_user_account_details(stripe_acc, user_id)
-  end
-
-  def save_user_account_details(account, user_id)
-    p account
+  def save_user_account_details(account)
     self.email = account['email']
     self.country = account['country']
     self.phone_number = account['phone_number']

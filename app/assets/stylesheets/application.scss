@@ -4,6 +4,7 @@
 @import "mixins/buttons";
 @import "mixins/elements";
 @import "mixins/dataTables";
+@import "mixins/animations";
 
 /* Globals */
 @import "globals/variables";
@@ -14,12 +15,13 @@
 @import "layouts";
 
 /* Partials */
-@import "partials/inputs";
 @import "partials/grid";
 @import "partials/form";
+@import "partials/inputs";
 @import "partials/breadcrumbs";
 @import "partials/buttons";
 @import "partials/table";
+@import "partials/modals";
 
 /* Pages/sections */
 @import "sections/dash";

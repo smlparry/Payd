@@ -1,4 +1,4 @@
-<%= render :layout => "partials/dashboard" do %>
+<%= render layout: "partials/dashboard" do %>
   <h1>Plans</h1>
   <% if @plans.length == 0 %>
     <p>You do not have any plans yet</p>
@@ -6,24 +6,28 @@
       <%= grid_item 'Add Plan', new_dash_plan_path, 'ion-android-add'  %>
     </div>
   <% else %>
-    <table id="plans" class="datatable">
-      <thead>
+  <table id="plans" class="datatable">
+    <%= render partial: 'partials/table_head', locals: { columns: ['name', 'amount', 'actions'] } %>
+    <tbody>
+      <% @plans.each.with_index(1) do |plan, index| %>
         <tr>
-          <td>#</td>
-          <td>Name</td>
-          <td>Amount</td>
+          <td><%= index %></td>
+          <td><%= plan.name %></td>
+          <td><%= to_money plan.amount %> <%= plan.currency.upcase %></td>
+          <td style="text-align:center">
+            <%= link_to '<i class="ion-gear-a"></i>'.html_safe, edit_dash_plan_path(plan.id), class: 'button button-small' %>
+
+            <%= form_for plan, method: :delete, url: dash_plan_path(plan.id), html: { class: 'inline' } do |p| %>
+              <%= button_tag(class: "button button-small danger") do %>
+                <i class="ion-trash-b"></i>
+              <% end %>
+            <% end %>
+
+          </td>
         </tr>
-      </thead>
-      <tbody>
-        <% @plans.each do |plan| %>
-          <tr>
-            <td><%= link_to plan.id, dash_plan_path(plan.id) %></td>
-            <td><%= link_to plan.name, dash_plan_path(plan.id) %></td>
-            <td><%= link_to plan.amount, dash_plan_path(plan.id) %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+      <% end %>
+    </tbody>
+  </table>
     <%= link_to "Add Another Plan", new_dash_plan_path, class: "button-block" %>
   <% end %>
 <% end %>

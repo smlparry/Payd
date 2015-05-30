@@ -1,6 +1,9 @@
 <%= render :layout => 'partials/dashboard' do %>
   <div class="grid">
-    <% if ! current_user.stripe_user %>
+    <% if @stripe_user %>
+      <p>Your Stripe Account is connected</p>
+      <%= link_to 'Disconnect your Stripe Account', dash_account_stripe_disconnect_path %>
+    <% else %>
       <div class="grid-item">
         <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=<%= STRIPE_CONFIG['client_id'] %>&scope=read_write">
           <div class="icon-button">
@@ -12,6 +15,6 @@
     <% end %>
   </div>
   <ul>
-    <li><%= link_to "ad", new_dash_account_stripe_path %></li>
+    <li><%= link_to "ad", dash_account_stripe_connect_path %></li>
   </ul>
 <% end %>

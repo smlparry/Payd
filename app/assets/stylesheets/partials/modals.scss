@@ -1,0 +1,34 @@
+#modal-overlay {
+  position:absolute;
+  height: 100vh;
+  width: 100%;
+   z-index:15;
+   top: 0;
+   bottom: 0;
+  background: rgba(0,0,0,0.5);
+  .modal {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    max-width:500px;
+    max-height:175px;
+    z-index:15;
+    top:50%;
+    left:50%;
+    margin:-200px 0 0 -250px;
+    background:$white;
+    border-radius: 5px;
+   text-align: center;
+   padding: 20px;
+   color: $text;
+
+  p {
+    i {
+      @include spin();
+      color: $blue;
+      font-size: 4em;
+    }
+  }
+  }
+
+}

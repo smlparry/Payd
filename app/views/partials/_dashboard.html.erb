@@ -1,12 +1,15 @@
 <section id="dash">
-  <%= render 'partials/flash' %>
-  <div class="dash-header">
-    <h1><%= breadcrumbs %></h1>
-  </div>
-  <div class="dashboard">
-    <%= render "partials/sidebar" %>
-    <div class="content">
-      <%= yield %>
+  <div class="container">
+    <%= render 'partials/flash' %>
+    <div class="dash-header">
+      <h1><%= breadcrumbs %></h1>
+    </div>
+    <div class="dashboard">
+      <%= render "partials/sidebar" %>
+      <div class="content">
+        <%= yield %>
+      </div>
     </div>
   </div>
+  <%= render 'partials/modals/loading' %>
 </section>

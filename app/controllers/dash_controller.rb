@@ -2,6 +2,7 @@ class DashController < ApplicationController
   before_action :authenticate_user!
 
   def home
+    @stripe_user = current_user.stripe_user if current_user
   end
 
   def subscribers
@@ -12,5 +13,4 @@ class DashController < ApplicationController
 
   def plans
   end
-
 end
