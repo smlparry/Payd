@@ -39,8 +39,8 @@ RSpec.describe 'Plans', type: :request do
     it 'shows a new plan form' do
       expect(page).to have_field('plan_name')
       expect(page).to have_field('plan_amount')
-      expect(page).to have_field('plan_period_amount')
-      expect(page).to have_field('plan_period_type')
+      expect(page).to have_field('plan_interval_count')
+      expect(page).to have_field('plan_interval_type')
       expect(page).to have_selector('input[type=submit]')
     end
 
@@ -59,8 +59,8 @@ RSpec.describe 'Plans', type: :request do
     it 'checks plans values are being shown in form' do
       expect(page).to have_field('plan_name', with: @plan.name)
       expect(page).to have_field('plan_amount', with: @plan.amount)
-      expect(page).to have_field('plan_period_amount', with: @plan.period_amount)
-      expect(page).to have_field('plan_period_type', with: @plan.period_type)
+      expect(page).to have_field('plan_interval_count', with: @plan.interval_count)
+      expect(page).to have_field('plan_interval_type', with: @plan.interval_type)
     end
 
     it 'redirects to show page after edit' do

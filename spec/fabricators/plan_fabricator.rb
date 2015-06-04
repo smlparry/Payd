@@ -3,7 +3,8 @@ Fabricator(:plan) do
   # transactions(count: 5)
   # subscribers(count: 3)
   name { Faker::Commerce.product_name }
-  period_amount { Faker::Number.digit }
-  period_type { 'month' }
+  interval_count { Faker::Number.digit }
+  interval_type { 'month' }
   amount { Faker::Number.number(2) }
+  currency { 'AUD' }
 end

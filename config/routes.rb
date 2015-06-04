@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     end
   end
 
+  # Payment page controller
+  get 'p/:id' => 'payment_page#show'
+
   devise_for :users
 
   get 'pages/home'

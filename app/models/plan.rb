@@ -21,7 +21,7 @@ class Plan < ActiveRecord::Base
 
   # Assign values from a form input
   def store_form_params(params, user_id = nil)
-    self.stripe_id = 'payd_' + Helpers::StringHelpers.random_string if user_id
+    self.uid = Helpers::StringHelpers.random_string if user_id
     self.user_id = user_id
     self.name = params[:plan][:name]
     self.amount = params[:plan][:amount].sub! '.', ''

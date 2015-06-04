@@ -15,6 +15,6 @@ Fabricator(:stripe_user) do
   name { Faker::Name.name }
   default_currency { 'AUD' }
   currencies_supported { Faker::Lorem.words(5) }
-  timezone {  Faker::Address.time_zone }
+  timezone { Faker::Address.time_zone }
   charge_enabled { true }
 end
